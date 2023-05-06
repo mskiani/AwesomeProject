@@ -1,12 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
+import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import ListScreen from './src/components/ListScreen';
+import FormScreen from './src/components/FormScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 export default function App() {
+
+
+
+  
+  const Tab = createBottomTabNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  
+     <NavigationContainer>
+     <Tab.Navigator>
+     
+      <Tab.Screen name="List" component={ListScreen}  />
+      <Tab.Screen name="Form" component={FormScreen} />
+    </Tab.Navigator>
+    </NavigationContainer>
+   
   );
 }
 
